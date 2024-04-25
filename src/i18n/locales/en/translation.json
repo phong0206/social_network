@@ -1,0 +1,47 @@
+{
+  "language": "en",
+  "login": "Login",
+  "register": "Register",
+  "dashboard": "Dashboard",
+
+  "profile": "Profile",
+  "logout": "Logout",
+
+  "home": "Home",
+  "trending": "Trending",
+  "create": "Create",
+  "favourites": "Favourites",
+  "settings": "Settings",
+  "search": "Search ...",
+
+  "profile edit": "User Profile Edit",
+  "avatar": "Avatar",
+  "change avatar": "Change Avatar",
+  "first name": "First Name",
+  "last name": "Last Name",
+  "birth date": "Birth Date",
+  "phone number": "Phone Number",
+  "password": "Password",
+  "cancel": "Cancel",
+  "submit": "Submit",
+
+  "follow": "Follow",
+  "unfollow": "Unfollow",
+  "views": "views",
+  "for you": "Stories For You Today",
+
+  "welcome": "Sign in to your account",
+  "enjoy": "to enjoy all of our cool features ✌️",
+  "remember me": "Remember me",
+  "forgot pass": "Forgot password",
+  "sign up": "Sign up",
+  "sign in": "Sign in",
+  "email require": "Email is required",
+  "password require": "Password is required",
+  "already": "Already a user",
+
+  "forgot your pass": "Forgot your password",
+  "getlink": "You'll get an email with a reset link",
+  "back login": "Back to login",
+  "send request": "Send request"
+}
