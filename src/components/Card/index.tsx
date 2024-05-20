@@ -22,32 +22,7 @@ import React from 'react';
 import { BsHeartFill, BsHeart } from 'react-icons/bs';
 import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
 import { useMultiLang } from '~/hooks/multiLanguage';
-
-interface IBlogTags {
-  tags: Array<string>;
-  marginTop?: SpaceProps['marginTop'];
-}
-
-interface Props {
-  marginTop?: number;
-  tags: any[];
-}
-
-const BlogTags = (props: Props) => {
-  const { marginTop = 0, tags } = props;
-
-  return (
-    <HStack spacing={2} marginTop={marginTop}>
-      {tags.map(tag => {
-        return (
-          <Tag size={'md'} variant="solid" colorScheme="orange" key={tag}>
-            {tag}
-          </Tag>
-        );
-      })}
-    </HStack>
-  );
-};
+import { BlogTags } from '~/components/Blog/BlogTags';
 
 interface BlogAuthorProps {
   date: Date;

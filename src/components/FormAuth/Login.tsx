@@ -20,6 +20,8 @@ import 'react-notifications-component/dist/theme.css';
 import { loginRequest } from '~/store/actions/user';
 import { useDispatch } from 'react-redux';
 import { useMultiLang } from '~/hooks/multiLanguage';
+import * as React from 'react';
+import { useLocation } from 'react-router-dom';
 
 interface LoginParams {
   email: string;

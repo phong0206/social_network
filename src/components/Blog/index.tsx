@@ -22,26 +22,10 @@ import {
 import React from 'react'; // Make sure to import React
 import { BsHeart, BsHeartFill } from 'react-icons/bs';
 import { RiUserFollowFill, RiUserUnfollowFill } from 'react-icons/ri';
-import CommentsList from '~/components/Coments';
+import CommentsList from '~/components/Comments';
 import { useMultiLang } from '~/hooks/multiLanguage';
-
-interface BlogTagsProps {
-  tags: string[];
-  marginTop?: SpaceProps['marginTop'];
-}
-
-const BlogTags = ({ tags, marginTop = 0 }: BlogTagsProps) => {
-  return (
-    <HStack spacing={2} marginTop={marginTop}>
-      {tags.map((tag, index) => (
-        <Tag size={'md'} variant="solid" colorScheme="orange" key={index}>
-          {tag}
-        </Tag>
-      ))}
-    </HStack>
-  );
-};
-
+import { BlogTags } from './BlogTags';
+import {ButtonShare} from '~/components/Button/ButtonShare'
 interface BlogAuthorProps {
   date: Date;
   name: string;
@@ -71,12 +55,16 @@ const ArticleList = () => {
   const { t } = useMultiLang();
 
   return (
-    <Container maxW="7xl" p="12">
-      <Grid templateColumns="repeat(5, 1fr)" gap={4}>
+    <Container maxW="7xl" pt="12">
+      <GridItem colSpan={2} h="10">
+        <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
+      </GridItem>
+
+      <Grid gap={4}>
         <GridItem colSpan={2} h="10" >
-          <BlogAuthor name="John Doe" date={new Date('2021-04-06T19:01:27Z')} />
+          <BlogTags tags={['Engineering', 'Product']} marginTop={3} />
         </GridItem>
-        <GridItem colStart={6} colEnd={8} h="10" >
+        <GridItem  colEnd={8} h="10">
           <Stack direction="row" spacing={4} mt={2}>
             <Flex cursor="pointer">
               {liked ? (
@@ -111,14 +99,6 @@ const ArticleList = () => {
           </Stack>
         </GridItem>
       </Grid>
-
-      <Wrap spacing="30px">
-        <WrapItem width={{ base: '100%', sm: '45%', md: '45%', lg: '30%' }}>
-          <Box w="100%">
-            <BlogTags tags={['Engineering', 'Product']} marginTop={3} />
-          </Box>
-        </WrapItem>
-      </Wrap>
       <Heading as="h2" textAlign="center" marginTop="5" paddingBottom="15px">
         What we write about
       </Heading>
@@ -194,6 +174,7 @@ const ArticleList = () => {
           </VStack>
         </Box>
         <Box mt="40px">
+          <ButtonShare/>
           <CommentsList />
         </Box>
       </Grid>

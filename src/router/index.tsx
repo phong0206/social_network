@@ -7,10 +7,14 @@ import BaseLayout from '~/layout/BaseLayout';
 const Login = lazy(() => import('~/components/FormAuth/Login'));
 const Register = lazy(() => import('~/components/FormAuth/Register'));
 const ForgotPassword = lazy(() => import('~/components/FormAuth/ForgotPassword'));
+const SetNewPassword = lazy(() => import('~/components/FormAuth/SetNewPassword'));
 const DetailUser = lazy(() => import('~/pages/DetailUser'));
 const NotFound = lazy(() => import('~/pages/NotFound'));
 const Blog = lazy(() => import('~/components/Card'));
 const Detail = lazy(() => import('~/components/Blog'));
+const ActiveUser = lazy(() => import('~/pages/ActiveUser'));
+
+
 export default [
   {
     path: `/login`,
@@ -27,6 +31,12 @@ export default [
   {
     path: `/forgot-password`,
     component: <ForgotPassword />,
+    layout: BaseLayoutAuth,
+    protected: false
+  },
+  {
+    path: `/set-password`,
+    component: <SetNewPassword />,
     layout: BaseLayoutAuth,
     protected: false
   },
@@ -52,5 +62,10 @@ export default [
     component: <Detail />,
     layout: BaseLayout,
     protected: true
+  },
+  {
+    path: `/active-user`,
+    component: <ActiveUser />,
+    protected: false
   }
 ];

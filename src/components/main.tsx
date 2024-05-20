@@ -7,7 +7,7 @@ import { useSelectorUser } from '~/store/selectors/user';
 
 import routes from '~/router';
 
-import ScrollToTopBtn from '~/components/menu/ScrollToTop';
+import ScrollToTopBtn from '~/components/Button/ScrollToTop';
 interface RouteProps {
   children: ReactElement;
 }
@@ -20,7 +20,7 @@ const ProtectedRoute = ({ children }: RouteProps): ReactElement | null => {
 const GuestRoute = ({ children }: RouteProps): ReactElement | null => {
   const location = useLocation();
   const user = useSelectorUser();
-  return <>{user ? <Navigate to="/" state={{ from: location }} replace /> : children}</>;
+  return <>{user && user.isActive ? <Navigate to="/" state={{ from: location }} replace /> : children}</>;
 };
 
 const App = () => {
